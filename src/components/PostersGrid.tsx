@@ -1,33 +1,41 @@
-// src/components/PostersGrid.tsx
 "use client"
 
 import { useState } from "react"
 import { posters } from "@/data/posters"
-import { PosterModal } from "@/components/PosterModal"
+import { PosterDrawer } from "@/components/PosterDrawer"
 import { ThreePoster } from "@/components/ThreePoster"
-import { Poster } from "@/types/poster"
+import type { Poster } from "@/types/poster"
 
 export function PostersGrid() {
-  const [selected, setSelected] = useState<Poster | null>(null)
+  const [selectedPoster, setSelectedPoster] = useState<Poster | null>(null)
   const [open, setOpen] = useState(false)
 
+  const handleClick = (poster: Poster) => {
+    setSelectedPoster(poster)
+    setOpen(true)
+  }
+
   return (
-    <section className="w-full py-12 px-6 md:px-12">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
-        {posters.map(p => (
-          <div
-            key={p.title}
-            className="flex justify-center cursor-pointer"
-            onClick={() => {
-              setSelected(p)
-              setOpen(true)
-            }}
-          >
-            <ThreePoster imageUrl={p.imageUrl} />
-          </div>
-        ))}
-      </div>
-      <PosterModal poster={selected} open={open} onOpenChange={setOpen} />
-    </section>
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 justify-items-center">
+      {posters.map((poster) => (
+        <div
+          key={poster.title}
+          className="cursor-pointer transition-transform hover:scale-[1.05]"
+          onClick={() => handleClick(poster)}
+        >
+          <ThreePoster imageUrl={poster.imageUrl} />
+          <h3 className="mt-4 text-center text-amber-400 text-lg font-semibold">
+            {poster.title}
+          </h3>
+        </div>
+      ))}
+
+      {/* 🪟 Drawer */}
+      <PosterDrawer
+        poster={selectedPoster}
+        open={open}
+        onOpenChange={(v: boolean) => setOpen(v)}
+      />
+    </div>
   )
 }

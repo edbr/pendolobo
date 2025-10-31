@@ -38,11 +38,8 @@ export default function Home() {
   <div className="mt-8 h-0.5 w-48 bg-linear-to-r from-amber-500/40 via-rose-400/40 to-transparent rounded-full animate-pulse-slow" />
 </div>
 
-
-
       {/* 🖼️ Collection Section */}
       <section className="w-full max-w-7xl space-y-12">
-
         <PostersGrid />
       </section>
     </main>

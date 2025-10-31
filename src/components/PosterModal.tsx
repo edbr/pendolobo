@@ -31,8 +31,7 @@ export function PosterModal({
           w-screen h-screen
           bg-black text-foreground
           overflow-hidden
-          border border-amber-500/30 
-    shadow-[0_0_60px_rgba(255,191,0,0.2)]
+          
         "
       >
         {/* LEFT: Poster + Button */}
