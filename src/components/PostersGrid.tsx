@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { posters } from "@/data/posters"
-import { PosterDrawer } from "@/components/PosterDrawer"
+import { PosterDialog } from "@/components/PosterDialog"
 import { ThreePoster } from "@/components/ThreePoster"
 import type { Poster } from "@/types/poster"
 
@@ -31,11 +31,11 @@ export function PostersGrid() {
       ))}
 
       {/* 🪟 Drawer */}
-      <PosterDrawer
-        poster={selectedPoster}
-        open={open}
-        onOpenChange={(v: boolean) => setOpen(v)}
-      />
+      <PosterDialog
+  poster={selectedPoster}
+  open={open}
+  onOpenChange={(v: boolean) => setOpen(v)}
+/>
     </div>
   )
 }

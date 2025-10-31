@@ -9,7 +9,6 @@ import {
 } from "@/components/ui/dialog";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Button } from "@/components/ui/button";
-import { X } from "lucide-react";
 import { Poster } from "@/types/poster";
 
 export function PosterDialog({
@@ -27,39 +26,22 @@ export function PosterDialog({
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent
         className="
-          sm:max-w-4xl bg-zinc-950/95 text-zinc-100 backdrop-blur-lg
+          sm:max-w-5xl bg-zinc-950/95 text-zinc-100 backdrop-blur-lg
           border border-amber-400/20 shadow-[0_0_60px_rgba(255,191,0,0.25)]
-          flex flex-col gap-6 p-0 overflow-hidden
-        "
-      >
-        {/* Header */}
-        <DialogHeader className="relative p-6 pb-0">
-          <DialogTitle className="text-2xl font-bold bg-linear-to-r from-amber-300 to-rose-400 bg-clip-text text-transparent">
-            {poster.title}
-          </DialogTitle>
+          flex flex-col sm:flex-row gap-8 p-6 sm:p-8
+          h-[90vh] sm:h-auto sm:max-h-[85vh] overflow-hidden
+        ">
 
-          <DialogClose asChild>
-            <button
-              className="absolute right-6 top-6 p-2 rounded-full bg-amber-500/20 hover:bg-amber-400/30 transition-colors"
-            >
-              <X className="h-5 w-5 text-amber-300" />
-            </button>
-          </DialogClose>
-        </DialogHeader>
-
-        {/* Image */}
-        <div className="flex justify-center">
-          <div className="w-full max-w-md aspect-3/4 rounded-lg overflow-hidden shadow-[0_0_40px_rgba(255,191,0,0.15)]">
+        {/* Left: Image + CTA */}
+        <div className="flex flex-col items-center sm:w-1/2 space-y-4">
+          <div className="relative aspect-3/4 w-full max-w-sm rounded-lg overflow-hidden shadow-[0_0_40px_rgba(255,191,0,0.15)]">
             <img
               src={poster.imageUrl}
               alt={poster.title}
               className="object-contain w-full h-full"
             />
           </div>
-        </div>
 
-        {/* CTA */}
-        <div className="px-6">
           <Button
             className="
               w-full text-lg font-semibold bg-amber-500 text-black
@@ -72,13 +54,20 @@ export function PosterDialog({
           </Button>
         </div>
 
-        {/* Scrollable Description */}
-        <ScrollArea className="max-h-[40vh] px-6 pb-8">
-          <p className="whitespace-pre-line text-sm text-zinc-300 mb-6 leading-relaxed">
-            {poster.description}
-          </p>
+        {/* Right: Scrollable Info */}
+        <ScrollArea className="sm:w-1/2 h-[60vh] sm:h-[70vh] pr-4">
+          <div className="space-y-6 pb-12">
+            {/* Title above description */}
+            <DialogHeader className="pb-2">
+              <DialogTitle className="text-xl md:text-2xl font-bold bg-linear-to-r from-amber-300 to-rose-400 bg-clip-text text-transparent">
+                {poster.title}
+              </DialogTitle>
+            </DialogHeader>
 
-          <div className="space-y-6">
+            <p className="whitespace-pre-line text-sm text-zinc-300 leading-relaxed">
+              {poster.description}
+            </p>
+
             <div>
               <h3 className="font-semibold text-amber-400 uppercase tracking-wider mb-2">
                 Features
@@ -111,11 +100,11 @@ export function PosterDialog({
                 ))}
               </ul>
             </div>
-          </div>
 
-          <p className="italic text-center mt-8 text-amber-400/80 border-t border-amber-400/20 pt-4">
-            {poster.tagline}
-          </p>
+            <p className="italic text-center mt-8 text-amber-400/80 border-t border-amber-400/20 pt-4">
+              {poster.tagline}
+            </p>
+          </div>
         </ScrollArea>
       </DialogContent>
     </Dialog>
