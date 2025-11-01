@@ -5,26 +5,28 @@ const pressNames = [
   "Post-Modern Mechanics",
   "Design & Dystopia",
   "Cultured Collapse",
-  "The Gentleman’s Irony"  ,
+  "The Gentleman’s Irony",
+  "Neo-Bohemian Digest",
+  ,
 ]
 
 export function PressStrip() {
   return (
-    <section className="py-12 border-y border-border bg-muted/30">
+    <section className="w-full border-y border-border bg-muted/30">
       <div
         className="
-          max-w-6xl mx-auto px-6
-          grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5
-          gap-8 items-center justify-items-center
+          grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-6
+          gap-y-8 py-12 px-6
+          text-center uppercase text-muted-foreground text-sm sm:text-base
+          tracking-wider font-light
         "
       >
         {pressNames.map((name, i) => (
           <div
             key={i}
             className="
-              text-muted-foreground text-center uppercase tracking-wider
               opacity-60 hover:opacity-100 transition-opacity duration-300
-              text-sm sm:text-base font-light
+              flex items-center justify-center
             "
             style={{
               fontFamily: i % 2 === 0 ? "serif" : "sans-serif",

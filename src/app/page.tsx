@@ -1,23 +1,21 @@
 import { PostersShowcase } from "@/components/PostersShowcase"
 import { HeroMosaic } from "@/components/HeroMosaic"
 import { PressStrip } from "@/components/PressStrip"
-
+import { Header } from "@/components/header"
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-background text-foreground">
-        <HeroMosaic />
+      <Header />
+      <HeroMosaic />
 
       {/* 🗞️ “Press” / fake logos */}
-    <PressStrip />
+      <PressStrip />
 
-      {/* 🖼️ Collection Grid */}
-      <section className="py-24 px-4 sm:px-8 md:px-16 max-w-7xl mx-auto">
-        <h2 className="text-center text-3xl md:text-4xl font-light mb-12 text-foreground">
-          The Collection
-        </h2>
+      {/* ✅ Full-width posters grid */}
+      <div className="relative left-1/2 right-1/2 -mx-[50vw] w-screen">
         <PostersShowcase />
-      </section>
+      </div>
     </main>
   )
 }

@@ -16,45 +16,52 @@ export function PostersShowcase() {
   }
 
   return (
-    <section className="py-20 px-4 sm:px-8 md:px-12 max-w-7xl mx-auto">
-      {/* Gallery Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-10">
+    <section className="w-full py-24 overflow-hidden">
+      <div
+        className="
+          mx-auto w-full max-w-[1800px]
+          grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4
+          gap-6 sm:gap-8 px-4 sm:px-8
+        "
+      >
         {posters.map((poster) => (
           <div
             key={poster.title}
             onClick={() => handleClick(poster)}
             className="
-              group relative overflow-hidden rounded-lg cursor-pointer
-              bg-card text-card-foreground border border-border
-              transition-base hover:shadow-lg hover:scale-[1.01]
+              group relative cursor-pointer overflow-hidden
+              bg-background border border-border rounded-lg
+              transition-all duration-300 hover:scale-[1.01] hover:shadow-md
             "
           >
-            {/* Poster Image */}
             <div className="relative aspect-3/4 w-full overflow-hidden">
               <Image
                 src={poster.imageUrl}
                 alt={poster.title}
                 fill
-                className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                className="
+                  object-cover object-center transition-transform duration-500
+                  group-hover:scale-115
+                "
               />
             </div>
 
-            {/* Title + Tagline */}
-            <div className="p-4 md:p-6 text-center">
-              <h3 className="text-lg font-medium text-foreground mb-2 tracking-tight">
+            <div className="p-4 text-center">
+              <h3 className="text-base sm:text-lg font-medium text-foreground uppercase">
                 {poster.title}
               </h3>
-              <p className="subtext line-clamp-2">{poster.tagline}</p>
+              <p className="text-sm text-muted-foreground line-clamp-2">
+                {poster.tagline}
+              </p>
             </div>
           </div>
         ))}
       </div>
 
-      {/* Poster Dialog */}
       <PosterDialog
         poster={selectedPoster}
         open={open}
-        onOpenChange={(v: boolean) => setOpen(v)}
+        onOpenChange={setOpen}
       />
     </section>
   )

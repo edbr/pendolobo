@@ -5,72 +5,70 @@ import { motion } from "framer-motion"
 
 export function Header() {
   return (
-    <header
-      className="
-        fixed top-0 left-0 w-full z-50
-        flex items-center justify-between
-        px-4 sm:px-8 py-3 sm:py-4
-        bg-zinc-950/40 backdrop-blur-md border-b border-amber-500/10
-        shadow-[0_0_40px_rgba(255,180,80,0.05)]
-      "
-    >
-      {/* 🎨 Logo / Title */}
+    <header className="fixed top-6 left-1/2 z-50 -translate-x-1/2">
       <motion.div
-        initial={{ opacity: 0, y: -10 }}
+        initial={{ opacity: 0, y: -8 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="flex items-center"
+        transition={{ duration: 0.5, ease: "easeOut" }}
+        className="
+          flex items-center justify-between
+          w-[92vw] sm:w-[640px] md:w-[720px] lg:w-[800px]
+          px-6 py-3 sm:px-8 sm:py-4
+          rounded-full
+          border border-border/50
+          bg-background/70 backdrop-blur-md
+          shadow-[0_4px_40px_rgba(0,0,0,0.05)]
+        "
       >
+        {/* 🎨 Logo / Title */}
         <Link href="/" className="group relative">
           <h1
             className="
-              font-(--font-unifraktur) text-2xl sm:text-3xl tracking-wide
-              bg-linear-to-r from-amber-400 via-rose-500 to-red-500
-              bg-clip-text text-transparent
-              drop-shadow-[0_0_10px_rgba(255,120,60,0.25)]
-              transition-transform duration-300 group-hover:scale-105
+              font-sans text-xl sm:text-2xl font-semibold tracking-wide
+              text-foreground
+              transition-transform duration-300 group-hover:scale-[1.04]
             "
           >
             J.Lobo
           </h1>
 
-          {/* underline animation */}
+          {/* underline accent */}
           <span
             className="
               absolute -bottom-1 left-0 w-0 h-px
-              bg-linear-to-r from-amber-400 to-red-500
+              bg-foreground/60
               transition-all duration-500 group-hover:w-full
             "
           />
         </Link>
-      </motion.div>
 
-      {/* 🧭 Navigation */}
-      <nav className="hidden sm:flex gap-6 text-sm font-medium text-zinc-300 tracking-wide">
-        {[
-          { name: "About", href: "#about" },
-          { name: "Shop", href: "#shop" },
-          { name: "Contact", href: "#contact" },
-        ].map((link) => (
-          <motion.div
-            key={link.name}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.98 }}
-          >
-            <Link
-              href={link.href}
-              className="
-                relative hover:text-amber-400 transition-colors
-                after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-px
-                after:bg-linear-to-r after:from-amber-400 after:to-rose-400
-                hover:after:w-full after:transition-all after:duration-300
-              "
+        {/* 🧭 Navigation */}
+        <nav className="hidden sm:flex gap-6 text-sm font-medium text-muted-foreground tracking-wide">
+          {[
+            { name: "About", href: "#about" },
+            { name: "Shop", href: "#shop" },
+            { name: "Contact", href: "#contact" },
+          ].map((link) => (
+            <motion.div
+              key={link.name}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.97 }}
             >
-              {link.name}
-            </Link>
-          </motion.div>
-        ))}
-      </nav>
+              <Link
+                href={link.href}
+                className="
+                  relative hover:text-foreground transition-colors
+                  after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-px
+                  after:bg-foreground/60
+                  hover:after:w-full after:transition-all after:duration-300
+                "
+              >
+                {link.name}
+              </Link>
+            </motion.div>
+          ))}
+        </nav>
+      </motion.div>
     </header>
   )
 }
