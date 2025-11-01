@@ -3,7 +3,7 @@ import type { Poster } from "@/types/poster"
 
 export const posters: Poster[] = [
   {
-  title: "THE BIRTH OF JUAN LOBO",
+  title: "The Birth of JUAN LOBO",
   description: `They said he was born under the big top the night the rain tore through the canvas and the lights went out. His mother — La Loba Humana — was howling not for applause but for mercy, and the men in the freak tent thought it was part of the act. His father, El Equilibrista del Silencio, crossed the rope above her, trying to reach her before the lightning did.
 
 They never found out which came first — the cry of the child or the sound of the rope snapping.
@@ -35,7 +35,7 @@ the son of the rope and the howl.`,
   tagline: "Half saint, half stray — born of the rope and the howl."
 },
 
-   { title: "RASPUTIN & MARX RESURRECTION POPPER",
+   { title: "Rasputin & Marx Resurrection Popper",
     description: `“Wind once for prophecy, twice for revolution.”
 From the creators of *The Hitchcock Lovebirds Popper* and *John Ford’s Hot Short Rodeo Box*, comes the latest addition to the *Cursed Prophet Series* — the Rasputin & Marx Resurrection Popper, an animatronic relic of mysticism, madness, and failed utopias.
 
@@ -65,7 +65,7 @@ Turn the handle, and witness The Mad Monk of St. Petersburg claw his way from th
 
   // 🪩 NEW ENTRY BELOW
   {
-    title: "CASBAH WORLD TOUR (DELUXE APOCALYPSE EDITION)",
+    title: "Casbah World Diplomatic Tour",
     description: `The Jimmy “Cowbell” Carter Peace Accord Popper
 Now with 30% more futility and an optional embargo expansion pack!
 
@@ -113,7 +113,7 @@ Carved from reclaimed embassy furniture and lubricated with 1979-grade irony, th
 
   // 🪩 NEW ENTRY BELOW
 {
-  title: "HILLBILLY VONNEGUT POPPER",
+  title: "Hillbilly Vonnegut Popper",
   description: `“Load irony, crank futility, fire at will.”
 
 Step right up and unbox America’s last great oracle, straight out of the outhouse and into your living room. The Hillbilly Vonnegut Popper blasts contradiction and gallows humor at 12 rounds per second, each shell packed with cheap satire and postwar despair. Pull the lever, and out pops Kurt himself—wild-eyed, mustached, and half-drunk on the moonshine of human stupidity.`,
