@@ -70,7 +70,7 @@ export function ArtShowcase() {
               className="relative w-[45%] sm:w-[42%] md:w-[40%] aspect-3/4 rounded-xl overflow-hidden border border-border shadow-2xl z-20 -translate-y-4 md:-translate-y-8"
             >
               <Image
-                src="https://juanlobo.s3.us-east-2.amazonaws.com/ordicanionLR.png"
+                src="https://juanlobo.s3.us-east-2.amazonaws.com/ordinacionLRSun.png"
                 alt="Ordinacion print in room"
                 fill
                 className="object-cover"
