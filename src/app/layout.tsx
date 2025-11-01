@@ -20,7 +20,7 @@ const unifraktur = UnifrakturCook({
 })
 
 export const metadata: Metadata = {
-  title: "Pendolobo",
+  title: "Pen do lobo",
   description: "Topical drawings and exquisite writings by J. Lobo",
 }
 

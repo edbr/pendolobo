@@ -1,140 +1,103 @@
-"use client";
+"use client"
 
+import Image from "next/image"
+import { Button } from "@/components/ui/button"
 import {
   Dialog,
   DialogContent,
   DialogHeader,
   DialogTitle,
-  DialogClose,
-} from "@/components/ui/dialog";
-import { ScrollArea } from "@/components/ui/scroll-area";
-import { Button } from "@/components/ui/button";
-import { Poster } from "@/types/poster";
+} from "@/components/ui/dialog"
+import type { Poster } from "@/types/poster"
 
 export function PosterDialog({
   poster,
   open,
   onOpenChange,
 }: {
-  poster: Poster | null;
-  open: boolean;
-  onOpenChange: (v: boolean) => void;
+  poster: Poster | null
+  open: boolean
+  onOpenChange: (v: boolean) => void
 }) {
-  if (!poster) return null;
+  if (!poster) return null
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent
         className="
-          sm:max-w-5xl bg-zinc-950/95 text-zinc-100 backdrop-blur-lg
-          border border-amber-400/20 shadow-[0_0_60px_rgba(255,191,0,0.25)]
-          p-0 overflow-hidden
+          sm:max-w-6xl w-[95vw] p-0
+          md:grid md:grid-cols-2
+          bg-background text-foreground border border-border shadow-lg
+          overflow-y-auto max-h-[90vh]
         "
       >
-
-
-        {/* Mobile: everything scrolls */}
-        <div className="block sm:hidden max-h-[85vh] overflow-y-auto p-6 space-y-8">
-          <div className="aspect-3/4 w-full rounded-lg overflow-hidden shadow-[0_0_40px_rgba(255,191,0,0.15)]">
-            <img
+        {/* LEFT */}
+        <div className="flex flex-col items-center justify-center gap-6 bg-muted/20 p-6 md:p-10">
+          <div className="relative w-full max-w-sm aspect-3/4 overflow-hidden rounded-md border border-border bg-background">
+            <Image
               src={poster.imageUrl}
               alt={poster.title}
-              className="object-contain w-full h-full"
+              fill
+              className="object-contain transition-transform duration-500 hover:scale-[1.02]"
             />
           </div>
 
           <Button
+            variant="outline"
             className="
-              w-full text-lg font-semibold bg-amber-500 text-black
-              hover:bg-amber-400 hover:shadow-[0_0_25px_rgba(255,191,0,0.4)]
-              transition-all duration-200
+              w-full text-sm font-medium uppercase tracking-wider
+              border border-foreground text-foreground
+              hover:bg-foreground hover:text-background transition-all
             "
+            onClick={() => alert(`Ordering ${poster.title}...`)}
           >
-            ⚡ Order Now
+            Order Print
           </Button>
-
-          <div className="space-y-6">
-            <h2 className="text-xl font-bold bg-linear-to-r from-amber-300 to-rose-400 bg-clip-text text-transparent">
-              {poster.title}
-            </h2>
-
-            <p className="text-sm text-zinc-300 whitespace-pre-line leading-relaxed">
-              {poster.description}
-            </p>
-
-            <Section title="Features" items={poster.features} />
-            <Section title="Endorsements" items={poster.endorsements} />
-            <Section title="Buyer Reviews" items={poster.reviews} />
-
-            <p className="italic text-center text-amber-400/80 border-t border-amber-400/20 pt-4">
-              {poster.tagline}
-            </p>
-          </div>
         </div>
 
-        {/* Desktop: side-by-side layout */}
-        <div className="hidden sm:flex gap-8 p-8">
-          {/* Left: image + button */}
-          <div className="flex flex-col items-center sm:w-1/2 space-y-4">
-            <div className="relative aspect-3/4 w-full max-w-sm rounded-lg overflow-hidden shadow-[0_0_40px_rgba(255,191,0,0.15)]">
-              <img
-                src={poster.imageUrl}
-                alt={poster.title}
-                className="object-contain w-full h-full"
-              />
-            </div>
+        {/* RIGHT */}
+        <div className="flex flex-col p-8 space-y-8">
+          <DialogHeader className="border-b border-border pb-4">
+            <DialogTitle className="text-2xl font-semibold uppercase tracking-wide">
+              {poster.title}
+            </DialogTitle>
+          </DialogHeader>
 
-            <Button
-              className="
-                w-full text-lg font-semibold bg-amber-500 text-black
-                hover:bg-amber-400 hover:shadow-[0_0_25px_rgba(255,191,0,0.4)]
-                transition-all duration-200
-              "
-            >
-              ⚡ Order Now
-            </Button>
+          {/* Description */}
+          <p className="text-sm leading-relaxed text-muted-foreground whitespace-pre-line">
+            {poster.description}
+          </p>
+
+          {/* Features */}
+          <div>
+            <h3 className="text-sm font-semibold uppercase tracking-wider mb-2 text-foreground">
+              Features
+            </h3>
+            <ul className="list-disc ml-6 text-sm text-muted-foreground space-y-1">
+              {poster.features.map((f) => (
+                <li key={f}>{f}</li>
+              ))}
+            </ul>
           </div>
 
-          {/* Right: scrollable details */}
-          <ScrollArea className="sm:w-1/2 h-[70vh] pr-4">
-            <div className="space-y-6">
-              <DialogHeader className="pb-2">
-                <DialogTitle className="text-2xl font-bold bg-linear-to-r from-amber-300 to-rose-400 bg-clip-text text-transparent">
-                  {poster.title}
-                </DialogTitle>
-              </DialogHeader>
+          {/* Reviews */}
+          <div>
+            <h3 className="text-sm font-semibold uppercase tracking-wider mb-2 text-foreground">
+              Reviews
+            </h3>
+            <ul className="list-disc ml-6 text-sm text-muted-foreground space-y-1">
+              {poster.reviews.map((r) => (
+                <li key={r}>{r}</li>
+              ))}
+            </ul>
+          </div>
 
-              <p className="text-sm text-zinc-300 whitespace-pre-line leading-relaxed">
-                {poster.description}
-              </p>
-
-              <Section title="Features" items={poster.features} />
-              <Section title="Endorsements" items={poster.endorsements} />
-              <Section title="Buyer Reviews" items={poster.reviews} />
-
-              <p className="italic text-center mt-8 text-amber-400/80 border-t border-amber-400/20 pt-4">
-                {poster.tagline}
-              </p>
-            </div>
-          </ScrollArea>
+          {/* Tagline */}
+          <p className="italic text-sm text-muted-foreground border-t border-border pt-4">
+            {poster.tagline}
+          </p>
         </div>
       </DialogContent>
     </Dialog>
-  );
-}
-
-/* Reusable section component */
-function Section({ title, items }: { title: string; items: string[] }) {
-  return (
-    <div>
-      <h3 className="font-semibold text-amber-400 uppercase tracking-wider mb-2">
-        {title}
-      </h3>
-      <ul className="list-disc ml-6 text-sm text-zinc-300 space-y-1">
-        {items.map((item) => (
-          <li key={item}>{item}</li>
-        ))}
-      </ul>
-    </div>
-  );
+  )
 }

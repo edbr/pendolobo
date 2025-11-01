@@ -3,7 +3,39 @@ import type { Poster } from "@/types/poster"
 
 export const posters: Poster[] = [
   {
-    title: "RASPUTIN & MARX RESURRECTION POPPER",
+  title: "THE BIRTH OF JUAN LOBO",
+  description: `They said he was born under the big top the night the rain tore through the canvas and the lights went out. His mother — La Loba Humana — was howling not for applause but for mercy, and the men in the freak tent thought it was part of the act. His father, El Equilibrista del Silencio, crossed the rope above her, trying to reach her before the lightning did.
+
+They never found out which came first — the cry of the child or the sound of the rope snapping.
+
+After that, the circus moved on without them. The cages were scrubbed, the posters painted over. Only a rumor remained: a boy raised among rusted wagons and tired beasts, who learned to balance between worlds — half saint, half stray.
+
+He walked the border towns carrying a box of broken music, stamping his mark on anything that would take it: walls, coins, hearts. Some said he was still searching for the sound of his father’s last step, others that he was trying to teach the world how to fall with grace.
+
+They call him Juan Lobo,
+the Disordered Wolf,
+the son of the rope and the howl.`,
+  imageUrl: "https://juanlobo.s3.us-east-2.amazonaws.com/ordinacion.jpeg",
+  features: [
+    "Authentic circus relic reproduction — aged canvas and rusted hinges",
+    "Engraved brass plate: ‘El Hijo del Equilibrista’",
+    "Sound mechanism emits faint thunder and distant applause when wound",
+    "Each box numbered and signed with a pawprint in red ink"
+  ],
+  endorsements: [
+    "Cirque des Oubliés Archives — “A missing chapter in the mythology of spectacle.”",
+    "Anonymous Roustabout, 1912 — “We swore we saw him under the bleachers that night.”",
+    "Lotería de los Muertos — “Card #23: El Lobo Errante. Extremely rare pull.”"
+  ],
+  reviews: [
+    "★★★★★ — “Played it once and smelled wet hay and ozone. Chills.” — @CarnivalArchivist",
+    "★★★★☆ — “My grandfather cried when he heard the thunder. Said he remembered the night.” — Luisa del Río",
+    "★★★★★ — “Finally, a box that sings of mercy and ruin.” — @SaintOfRust"
+  ],
+  tagline: "Half saint, half stray — born of the rope and the howl."
+},
+
+   { title: "RASPUTIN & MARX RESURRECTION POPPER",
     description: `“Wind once for prophecy, twice for revolution.”
 From the creators of *The Hitchcock Lovebirds Popper* and *John Ford’s Hot Short Rodeo Box*, comes the latest addition to the *Cursed Prophet Series* — the Rasputin & Marx Resurrection Popper, an animatronic relic of mysticism, madness, and failed utopias.
 
