@@ -3,6 +3,7 @@ import { HeroMosaic } from "@/components/HeroMosaic"
 import { PressStrip } from "@/components/PressStrip"
 import { Header } from "@/components/header"
 import { ArtShowcase } from "@/components/ArtShowcase"
+import { Footer } from "@/components/Footer"
 
 export default function Home() {
   return (
@@ -11,10 +12,8 @@ export default function Home() {
       <HeroMosaic />
       <PressStrip />
       <ArtShowcase />
-      {/* ✅ Full-width posters grid */}
-      <div className="relative left-1/2 right-1/2 -mx-[50vw] w-screen">
-        <PostersShowcase />
-      </div>
+      <PostersShowcase />
+      <Footer />
     </main>
   )
 }

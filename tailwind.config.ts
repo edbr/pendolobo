@@ -7,11 +7,12 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["var(--font-geist-sans)", ...defaultTheme.fontFamily.sans],
+        sans: ["var(--font-roboto)", ...defaultTheme.fontFamily.sans],
         mono: ["var(--font-geist-mono)", ...defaultTheme.fontFamily.mono],
       },
     },
   },
   plugins: [require("tailwindcss-animate")],
 }
+
 export default config

@@ -25,7 +25,7 @@ export function ArtShowcase() {
             When Art Walks Into the Room
           </h2>
 
-          <p className="text-muted-foreground mb-6 leading-relaxed text-base md:text-lg">
+          <p className="font-mono text-muted-foreground mb-6 leading-relaxed text-base md:text-lg">
             Each Pendolobo piece carries a story, a myth, and a punchline.
             See how these works hold their own beyond the frame — in the wild,
             in your space, in your daily rituals.
