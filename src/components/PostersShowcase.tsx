@@ -51,7 +51,7 @@ export function PostersShowcase() {
               <h3 className="text-base sm:text-lg font-medium text-foreground uppercase tracking-wide">
                 {poster.title}
               </h3>
-              <p className="font-mono text-sm text-muted-foreground line-clamp-2">
+              <p className="text-sm text-muted-foreground line-clamp-2">
                 {poster.tagline}
               </p>
             </div>

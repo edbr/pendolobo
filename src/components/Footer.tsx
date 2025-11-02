@@ -1,50 +1,50 @@
 "use client"
 
+import Image from "next/image"
 import Link from "next/link"
 
 export function Footer() {
   return (
-    <footer
-      className="
-        w-[calc(100%-2rem)] sm:w-[calc(100%-4rem)] md:w-[calc(100%-8rem)]
-        mx-auto mt-24 mb-8
-        rounded-2rem
-      "
-    >
+    <footer className="w-[calc(100%-2rem)] sm:w-[calc(100%-4rem)] md:w-[calc(100%-8rem)] mx-auto mt-24 mb-8 rounded-3xl bg-muted/40 border border-border font-sans">
       <div
         className="
-          max-w-[1800px] mx-auto
+          max-w-[1600px] mx-auto
           px-6 sm:px-10 py-16 md:py-20
-          grid grid-cols-2 md:grid-cols-3 gap-8
+          grid grid-cols-1 md:grid-cols-[auto_auto_auto_1fr]
+          gap-10 md:gap-20
           text-sm text-foreground/80
+          items-start
         "
       >
-        {/* Left: Logo + tagline */}
-        <div className="flex flex-col justify-between">
-          <h3 className=" text-3xl tracking-wide text-foreground mb-3">
-            Pen do Lobo
-          </h3>
-          <p className="text-muted-foreground text-lg">
-            “Topical drawings and exquisite writings by J. Lobo.”
-          </p>
-          <p className="text-lg text-muted-foreground mt-6">
-            © {new Date().getFullYear()} Pendolobo — All Rights Reserved
-          </p>
+        {/* Left: Large logo + brand name */}
+        <div className="flex flex-col items-start">
+          <Image
+            src="https://juanlobo.s3.us-east-2.amazonaws.com/logoColor.png"
+            alt="Pendolobo logo"
+            width={160}
+            height={160}
+            unoptimized
+            className="object-contain mb-4"
+          />
         </div>
 
-        {/* Middle: Nonsense links */}
+        {/* Middle: Main links */}
         <div className="flex flex-col space-y-2">
+          <h4 className="font-display text-lg uppercase tracking-wide mb-3 text-foreground">
+            Works
+          </h4>
           {[
             "Ink & Madness",
             "Mechanical Utopias",
             "Holy Detritus",
             "Obscure Shop",
             "Field Notes",
+            "Our Story",
           ].map((label) => (
             <Link
               key={label}
               href="#"
-              className="hover:text-amber-600 transition-colors"
+              className="hover:text-amber-600 transition-colors font-display text-base uppercase tracking-wide"
             >
               {label}
             </Link>
@@ -53,33 +53,37 @@ export function Footer() {
 
         {/* Right: Secondary links */}
         <div className="flex flex-col space-y-2">
+          <h4 className="font-display text-lg uppercase tracking-wide mb-3 text-foreground">
+            About
+          </h4>
           {[
             "Press",
             "Conspiracies",
             "Fragments",
             "Privacy (or lack thereof)",
             "Terms of Absurdity",
+            "Contact",
           ].map((label) => (
             <Link
               key={label}
               href="#"
-              className="hover:text-amber-600 transition-colors"
+              className="hover:text-amber-600 transition-colors font-display text-base uppercase tracking-wide"
             >
               {label}
             </Link>
           ))}
         </div>
+
+        {/* Spacer column */}
+        <div></div>
       </div>
 
       {/* Bottom bar */}
-      <div
-        className="
-          border-t border-border/50
-          mt-4 py-6 text-center text-xs text-muted-foreground
-        "
-      >
-        Follow the myth —
-        <span className="inline-flex gap-4 ml-4">
+      <div className="border-t border-border/50 mt-4 py-6 px-6 sm:px-10 flex flex-col md:flex-row items-center justify-between text-xs text-muted-foreground">
+        <h4 className="font-sans text-base mt-2 text-muted-foreground">
+          © {new Date().getFullYear()} Pendolobo — All Rights Reserved
+        </h4>
+        <div className="flex gap-6 mt-3 md:mt-0 font-display uppercase tracking-wider">
           {["Instagram", "TikTok", "Threads", "Substack"].map((social) => (
             <Link
               key={social}
@@ -89,7 +93,7 @@ export function Footer() {
               {social}
             </Link>
           ))}
-        </span>
+        </div>
       </div>
     </footer>
   )

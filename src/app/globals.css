@@ -1,14 +1,46 @@
 @import "tailwindcss";
 
+/* ------------------------------
+   Font Faces
+--------------------------------*/
+
+/* Oswald — for display/headings */
+@font-face {
+  font-family: "Oswald";
+  src: url("/fonts/oswald/Oswald-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Space Grotesk — for body text */
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("/fonts/space/SpaceGrotesk-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ------------------------------
+   Global Theme Variables
+--------------------------------*/
 @theme {
   --color-border: hsl(240 5.9% 90%);
   --color-background: hsl(0 0% 100%);
   --color-foreground: hsl(240 10% 3.9%);
 }
 
-
+/* ------------------------------
+   Base Styles
+--------------------------------*/
 @layer base {
   :root {
+    /* Font variables for Tailwind use */
+    --font-display: "Oswald", ui-sans-serif, system-ui, sans-serif;
+    --font-body: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+
+    /* Color system */
     --background: 0 0% 100%;
     --foreground: 240 10% 3.9%;
     --card: 0 0% 100%;
@@ -53,15 +85,34 @@
     --ring: 240 4.9% 83.9%;
   }
 
+  /* General Resets */
   * {
     @apply border-border;
   }
 
+  /* Typography */
   body {
-    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+    font-weight: 400;
+    line-height: 1.6;
+    @apply bg-background text-foreground antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display);
+    @apply tracking-wide font-semibold;
+    letter-spacing: 0.05em;
   }
 }
 
+/* ------------------------------
+   Utilities
+--------------------------------*/
 @layer utilities {
   .container {
     @apply mx-auto px-4 sm:px-6 lg:px-8;
