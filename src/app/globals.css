@@ -61,6 +61,8 @@
     --input: 240 5.9% 90%;
     --ring: 240 5% 64.9%;
     --radius: 0.5rem;
+    --olive: 60 15% 50%;
+    --olive-foreground: 60 5% 15%;
   }
 
   .dark {

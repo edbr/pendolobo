@@ -5,7 +5,10 @@ import Link from "next/link"
 
 export function Footer() {
   return (
-    <footer className="w-[calc(100%-2rem)] sm:w-[calc(100%-4rem)] md:w-[calc(100%-8rem)] mx-auto mt-24 mb-8 rounded-3xl bg-muted/40 border border-border font-sans">
+    <footer
+  className="w-[calc(100%-2rem)] sm:w-[calc(100%-4rem)] md:w-[calc(100%-8rem)] mx-auto mt-24 mb-8 rounded-3xl border border-border bg-[hsl(var(--olive))] font-sans">
+
+      {/* Content */}
       <div
         className="
           max-w-[1600px] mx-auto
@@ -16,7 +19,7 @@ export function Footer() {
           items-start
         "
       >
-        {/* Left: Large logo + brand name */}
+        {/* Left: Logo */}
         <div className="flex flex-col items-start">
           <Image
             src="https://juanlobo.s3.us-east-2.amazonaws.com/logoColor.png"
@@ -28,7 +31,7 @@ export function Footer() {
           />
         </div>
 
-        {/* Middle: Main links */}
+        {/* Middle: Works links */}
         <div className="flex flex-col space-y-2">
           <h4 className="font-display text-lg uppercase tracking-wide mb-3 text-foreground">
             Works
@@ -51,7 +54,7 @@ export function Footer() {
           ))}
         </div>
 
-        {/* Right: Secondary links */}
+        {/* Right: About links */}
         <div className="flex flex-col space-y-2">
           <h4 className="font-display text-lg uppercase tracking-wide mb-3 text-foreground">
             About
@@ -74,7 +77,7 @@ export function Footer() {
           ))}
         </div>
 
-        {/* Spacer column */}
+        {/* Spacer */}
         <div></div>
       </div>
 

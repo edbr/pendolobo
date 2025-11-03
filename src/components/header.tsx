@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { motion } from "framer-motion"
 
 export function Header() {
@@ -21,7 +22,14 @@ export function Header() {
         "
       >
         {/* 🎨 Logo / Title */}
-        <Link href="/" className="group relative">
+        <Link href="/" className="group relative flex items-center gap-2">
+          <Image
+            src="https://juanlobo.s3.us-east-2.amazonaws.com/logoBW.png"
+            alt="J.Lobo logo"
+            width={72}
+            height={72}
+            className="rounded-sm object-contain transition-transform duration-300 group-hover:scale-105"
+          />
           <h1
             className="
               font-sans text-xl sm:text-2xl font-semibold tracking-wide

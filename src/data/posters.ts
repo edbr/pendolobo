@@ -139,6 +139,42 @@ Step right up and unbox America’s last great oracle, straight out of the outho
     "★★★★★ — “Every time it fires, I hear banjo music and feel less afraid of death. Would recommend.” — Unsigned"
   ],
   tagline: "Available now at all Woolworth’s liquidation sales and roadside apocalypse fairs."
+},
+{
+  title: "Rick Rubin Rubin Dual Consciousness Popper",
+  description: `“Two Minds. One Beard. Infinite Groove.”
+
+A Transcendental Production of the Universal Tone Cooperative (est. 1977, dissolved mid-session).
+
+LIMITED-TIME OFFER:
+For only $19.77 + a lock of your former self, you too can own the first-ever self-producing producer!
+Each Rubin emerges from the sacred box humming a different mantra:
+• Left Rubin: “Simplify.”
+• Right Rubin: “Monetize.”
+Together, they harmonize in D Major of the Soul, producing the legendary “Brown Noise of Enlightenment.”`,
+  imageUrl: "https://juanlobo.s3.us-east-2.amazonaws.com/Enlight5820.jpeg",
+  features: [
+    "Fully Analog Aura Engine — Removes digital demons and unwanted label interference.",
+    "Dual-Beard Resonance Chamber — Perfect for home meditation, studio recalibration, or summoning dormant record executives.",
+    "Magnetic Field of Intention — Every turn of the hand-crank balances your chakras and your EQ.",
+    "100% Vegan Feedback Loop — Sustain your frequency without harming the silence."
+  ],
+  endorsements: [
+    "“Both Rubins helped me master the sound of stillness. Then they asked for producer credit.” — Brian Eno (recorded telepathically)",
+    "“It’s like two sages fighting over the same compressor. I cried for a week.” — David Lynch (possibly in a dream)",
+    "“Finally—someone else who knows how to listen to silence louder than I do.” — Kanye (unauthorized quote, still litigating)",
+    "“The Rubins whispered, ‘You are the song, brother.’ I quit music that day.” — Jack White (ex-human)",
+    "“It’s like meditating inside a Fleetwood Mac breakup.” — Unidentified Sound Engineer, 1979",
+    "“Two producers, one beard, no gods. Just groove.” — Temple of Analog Newsletter, Issue #0",
+    "“The Rubins remastered my aura. Now my therapist can’t find the bassline.” — Anonymous mastering engineer (enlightened)"
+  ],
+  reviews: [
+    "★★★★★ — “I set the Rubins in front of my stereo and the next morning my album produced itself.” — Ambient Yogini, Malibu Colony",
+    "★★★★★ — “I stared into their eyes for nine hours. When I came to, my hair had grown to 12/8 time.” — Studio Monk, Hermosa Beach",
+    "★★★★★ — “They told me to delete everything but the truth. Then they deleted me.” — Former Drummer, whereabouts unknown"
+  ],
+  tagline: "Own both halves. Be whole."
 }
+
 
 ]
