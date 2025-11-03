@@ -2,7 +2,8 @@ import type { Metadata } from "next"
 import "./globals.css"
 
 export const metadata: Metadata = {
-  title: "Ordinacion del Lobo — Topical Drawings & Exquisite Writings by J. Lobo",
+  title:
+    "Ordinacion del Lobo — Topical Drawings & Exquisite Writings by J. Lobo",
   description:
     "Ordinacion del Lobo presents topical drawings and exquisite writings by J. Lobo — a surreal journey through ink, myth, and rebellion.",
   keywords: [
@@ -18,14 +19,15 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.ico",
   },
-   other: {
-    "google-site-verification": "c_3hXDCoF4vmr7phIVJHOhyXLn8jca1NsFYSvHbCVV0",
+  other: {
+    "google-site-verification":
+      "c_3hXDCoF4vmr7phIVJHOhyXLn8jca1NsFYSvHbCVV0",
   },
   openGraph: {
     title: "Ordinacion del Lobo — Drawings & Writings by J. Lobo",
     description:
       "Surreal works exploring myth, satire, and identity through exquisite drawings and prose.",
-    url: "https://juanlobo.com",
+    url: "https://pendolobo.vercel.app",
     siteName: "Ordinacion del Lobo",
     images: [
       {
@@ -49,7 +51,6 @@ export const metadata: Metadata = {
     creator: "@pendolobo",
   },
 }
-
 
 export default function RootLayout({
   children,
