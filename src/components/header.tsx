@@ -32,12 +32,11 @@ export function Header() {
           />
           <h1
             className="
-              font-sans text-xl sm:text-2xl font-semibold tracking-wide
-              text-foreground
-              transition-transform duration-300 group-hover:scale-[1.04]
-            "
+            text-xl text-[hsl(var(--olive-foreground))] hover:text-[hsl(var(--olive))]
+            transition-colors duration-300
+"
           >
-            J.Lobo
+            Ordinación del Lobo Desordenado
           </h1>
 
           {/* underline accent */}

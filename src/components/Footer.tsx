@@ -6,7 +6,7 @@ import Link from "next/link"
 export function Footer() {
   return (
     <footer
-  className="w-[calc(100%-2rem)] sm:w-[calc(100%-4rem)] md:w-[calc(100%-8rem)] mx-auto mt-24 mb-8 rounded-3xl border border-border bg-[hsl(var(--olive))] font-sans">
+  className="w-[calc(100%-2rem)] sm:w-[calc(100%-4rem)] md:w-[calc(100%-8rem)] mx-auto mt-24 mb-8 rounded-3xl border border-border bg-[hsl(var(--olive))]">
 
       {/* Content */}
       <div
